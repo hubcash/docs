@@ -1,2 +1,4 @@
 # docs
-Hubcash API documentation files
+Hubcash API documentation files.
+
+Powered by [agilo](https://github.com/danielgtaylor/aglio)
