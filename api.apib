@@ -1,315 +1,166 @@
 FORMAT: 1A
-HOST: https://api.example.com
+HOST: https://api.hubcash.com/v1
 
 # API v1.0 - Documentation
-[Markdown](http://daringfireball.net/projects/markdown/syntax) **formatted** description.
+First of all, thanks for using our API. This documentation will guide you how to implement
+ your application to take advantage of our payment, delivery and fraud control solutions.
 
-## Subtitle
-Also Markdown *formatted*. This also includes automatic "smartypants" formatting -- hooray!
+<br/>
 
-> "A quote from another time and place"
-Another paragraph. Code sample:
+## Authorization
+To do so, we need use keys in *http headers* for all requests as specified below:
 
 ```http
-Authorization: bearer 5262d64b892e8d4341000001
+X-Hubcash-Code: string
+X-Hubcash-Token: string
 ```
-
-And some code with no highlighting:
-
-```no-highlight
-Foo bar baz
-```
-
-1. A list
-2. Of items
-3. Can be
-4. Very useful
-
-Here is a table:
-
-ID | Name | Description
---:| ---- | -----------
- 1 | Foo  | I am a foo.
- 8 | Bar  | I am a bar.
-15 | Baz  | I am a baz.
 
 ::: note
-## Extensions
-Some non-standard Markdown extensions are also supported, such as this informational container, which can also contain **formatting**. Features include:
+## Keys
+If you don't have these keys yet, you can can gain access following the links:
 
-* Informational block fenced with `::: note` and `:::`
-* Warning block fenced with `::: warning` and `:::`
-* [x] GitHub-style checkboxes using `[x]` and `[ ]`
-* Emoji support :smile: :ship: :cake: using `:smile:` ([cheat sheet](http://www.emoji-cheat-sheet.com/))
-
-These extensions may change in the future as the [CommonMark specification](http://spec.commonmark.org/) defines a [standard extension syntax](https://github.com/jgm/CommonMark/wiki/Proposed-Extensions).
+* [Production](#) keys to your production environment;
+* [Development](#) keys to your development environment and testing;
 :::
+
+> "For both environments you can use the default endpoint."
+
+<br/>
+
+## Support
+[Contact support team](#), you can always contact us to get more information.
+
+<br/>
+
 
 # Data Structures
 
-## NoteData
-+ id: 1 (required, number) - Unique identifier
-+ title: Grocery list (required) - Single line description
-+ body: Buy milk - Full description of the note which supports Markdown.
+## PostCardData (object)
++ Brand: Visa (required) - Card brand name
++ HolderName: Maria da Silva (required) - Holder name
++ Document: 223.112.333.112-22 (required) - Document of the holder
++ Phone: 93 912323322 (optional) - Optional phone of the holder
++ ExpMonth: 03 (required) - Card expiration month (mm)
++ ExpYear: 2022 (required) - Card expiration year (yyyy)
++ Number: 5162321366555222331234 (required) - (Requests) Card number
++ SecurityCode: 233 (required) - Card security code
 
-## NoteList (array)
-+ (NoteData)
+## PutCardData (object)
++ Brand: Visa (required) - Card brand name
++ HolderName: Maria da Silva (required) - Holder name
++ Document: 223.112.333.112-22 (required) - Document of the holder
++ Phone: 93 912323322 (optional) - Optional phone of the holder
++ ExpMonth: 03 (required) - Card expiration month (mm)
++ ExpYear: 2022 (required) - Card expiration year (yyyy)
 
-# Group Notes
-Group description (also with *Markdown*)
+## ViewCardData (object)
++ CardId: 58c040b32d8baf18526217f5 (optional) - Unique identifier
++ Brand: Visa (required) - Card brand name
++ HolderName: Maria da Silva (required) - Holder name
++ Document: 223.112.333.112-22 (required) - Document of the holder
++ Phone: 93 912323322 (optional) - Optional phone of the holder
++ ExpMonth: 03 (required) - Card expiration month (mm)
++ ExpYear: 2022 (required) - Card expiration year (yyyy)
++ LastDigits: 1234 (optional) - Last digits of the cards
++ DateUpdated: DateTime (optional) -  Date updated
++ DateAdded: DateTime (optional) -  Date added
 
-## Important Info
-Descriptions may also contain sub-headings and **more Markdown**.
+## CardList (array)
++ (ViewCardData) - Cards
 
-## Note List [/notes]
-Note list description
 
-+ Even
-+ More
-+ Markdown
+# Group Cards
+Credit and debit cards can be saved to be used by the consumer recurrently transactions.
 
-### Get Notes [GET]
-Get a list of notes.
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Attributes (NoteList)
-
-### Create New Note [POST]
-Create a new note using a title and an optional content body.
-
-+ Request with body (application/json)
-
-    + Body
-
-            {
-                "title": "My new note",
-                "body": "This is the body"
-            }
-
-+ Response 201
-
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                "error": "Invalid title"
-            }
-
-+ Request without body (application/json)
-
-    + Body
-
-            {
-                "title": "My new note"
-            }
-
-+ Response 201
-
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                "error": "Invalid title"
-            }
-
-## Note [/notes/{id}{?body}]
-Note description
+## Card detail [/cards/{CardId}]
 
 + Parameters
+    + CardId - Identifier
 
-    + id: `68a5sdf67` (required, string) - The note ID
+### Details [GET]
 
-### Get Note [GET]
-Get a single note.
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Card (ViewCardData)
+
+### Edit [PUT]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Card (PutCardData)
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Card (ViewCardData)
+
+### Delete [DELETE]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Success (string)
+
+
+## Cards by document [/cards/document/{document}{?pg}]
+Get a list of cards by consumer document.
 
 + Parameters
+    + document - Document of the consumer
+    + pg: `1` (number, optional) - Page number
 
-    + body: `false` (boolean) - Set to `false` to exclude note body content.
+### By document [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
 
 + Response 200 (application/json)
 
+    + Attributes (object)
+        + Cards (CardList)
+        + Pages (number)
+
+
+## Create New Card [/cards]
+
+### Create [POST]
+
++ Request example (application/json)
+
     + Headers
 
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
 
-    + Attributes (NoteData)
-
-+ Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Body
-
-            {
-                "error": "Note not found"
-            }
-
-### Update a Note [PUT]
-Update a single note by setting the title and/or body.
-
-::: warning
-#### <i class="fa fa-warning"></i> Caution
-If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-:::
-
-+ Request (application/json)
-
-    + Body
-
-            {
-                "title": "Grocery List (Safeway)"
-            }
+    + Attributes (object)
+        + Card (PostCardData)
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Attributes (NoteData)
-
-+ Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Body
-
-            {
-                "error": "Note not found"
-            }
-
-+ Request delete body (application/json)
-
-    + Body
-
-            {
-                "body": ""
-            }
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Attributes (NoteData)
-
-+ Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Body
-
-            {
-                "error": "Note not found"
-            }
-
-### Delete a Note [DELETE]
-Delete a single note
-
-+ Response 204
-
-+ Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
-    + Body
-
-            {
-                "error": "Note not found"
-            }
-
-# Group Users
-Group description
-
-## User List [/users{?name,joinedBefore,joinedAfter,sort,limit}]
-A list of users
-
-+ Parameters
-
-    + name: `alice` (string, optional) - Search for a user by name
-    + joinedBefore: `2011-01-01` (string, optional) - Search by join date
-    + joinedAfter: `2011-01-01` (string, optional, ) - Search by join date
-    + sort: `joined` (string, optional) - Which field to sort by
-        + Default: `name`
-        + Members
-            + `name`
-            + `joined`
-            + `-joined`
-            + `age`
-            + `-age`
-            + `location`
-            + `-location`
-            + `plan`
-            + `-plan`
-    + limit: `25` (integer, optional) - The maximum number of users to return, up to `50`
-      + Default: `10`
-
-### Get users [GET]
-Get a list of users. Example:
-
-```no-highlight
-https://api.mywebsite.com/users?sort=joined&limit=5
-```
-
-+ Response 200 (application/json)
-
-    + Body
-
-            [
-                {
-                    "name": "alice",
-                    "image": "http://example.com/alice.jpg",
-                    "joined": "2013-11-01"
-                },
-                {
-                    "name": "bob",
-                    "image": "http://example.com/bob.jpg",
-                    "joined": "2013-11-02"
-                }
-            ]
-
-    + Schema
-
-# Group Tags and Tagging Long Title
-Get or set tags on notes
-
-## GET /tags
-Get a list of bars
-
-+ Response 200 (application/json)
-
-        ["tag1", "tag2", "tag3"]
-
-## Get one tag [/tags/{id}]
-Get a single tag
-
-+ Parameters
-    + id - Unique tag identifier
-
-### GET
-
-+ Response 200
+    + Attributes (object)
+        + Card (ViewCardData)
