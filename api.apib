@@ -19,8 +19,8 @@ X-Hubcash-Token: string
 ## Keys
 If you don't have these keys yet, you can can gain access following the links:
 
-* [Production](#) keys to your production environment;
-* [Development](#) keys to your development environment and testing;
+* [Production](https://www.hubcash.com/panel/register) keys to your production environment;
+* [Development](https://www.hubcash.com/panel/register-development) keys to your development environment and testing;
 :::
 
 > "For both environments you can use the default endpoint."
@@ -28,7 +28,7 @@ If you don't have these keys yet, you can can gain access following the links:
 <br/>
 
 ## Support
-[Contact support team](#), you can always contact us to get more information.
+[Contact support team](https://www.hubcash.com/support), you can always contact us to get more information.
 
 <br/>
 
@@ -62,17 +62,49 @@ If you don't have these keys yet, you can can gain access following the links:
 + ExpMonth: 03 (required) - Card expiration month (mm)
 + ExpYear: 2022 (required) - Card expiration year (yyyy)
 + LastDigits: 1234 (optional) - Last digits of the cards
-+ DateUpdated: DateTime (optional) -  Date updated
-+ DateAdded: DateTime (optional) -  Date added
++ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
++ DateAdded: `Y-m-d- H:i:s` (optional) -  Date added
 
 ## CardList (array)
 + (ViewCardData) - Cards
+
+## CurrencyData (object)
++ CurrencyId: 58c040b32d8baf18526217f5 (optional) - Unique identifier
++ Name: BRL (required) - Currency name
++ SymbolLeft: R$ (optional) - Symbol left
++ SymbolRight: US$  (optional) - Symbol right
++ DecimalPlace: 2  (number, required) - Decimal place
+
+## CurrencyList (array)
++ (CurrencyData) - Currencies
+
+## BrandData (object)
++ Name: Mastercard (required) - Unique identifier, brand name
++ Image: https://api.hubcash.com/images/brand/mastercard.png (optional) - Brand image
++ NumberDigits: 22  (number, required) - Total number of digits for card number
++ NumberSecurity: 3  (number, required) - Total number of digits for security number
+
+## BrandList (array)
++ (BrandData) - Brands
+
+
+## NotificationData (object)
++ NotificationId: 58c040b32d8baf18526217f5 (required) - Unique identifier
++ DateAdded: `Y-m-d- H:i:s` (required) -  Date added
++ Sale (NotificationSaleData, required)
+
+## NotificationSaleData (object)
++ Tid: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
++ Status: 1 (number, required) - Sale status
+
+## NotificationList (array)
++ (NotificationData) - Notifications
 
 
 # Group Cards
 Credit and debit cards can be saved to be used by the consumer recurrently transactions.
 
-## Card detail [/cards/{CardId}]
+## Cards [/cards/{CardId}]
 
 + Parameters
     + CardId - Identifier
@@ -123,14 +155,14 @@ Credit and debit cards can be saved to be used by the consumer recurrently trans
         + Success (string)
 
 
-## Cards by document [/cards/document/{document}{?pg}]
+## List of cards by document [/cards/document/{document}{?pg}]
 Get a list of cards by consumer document.
 
 + Parameters
     + document - Document of the consumer
     + pg: `1` (number, optional) - Page number
 
-### By document [GET]
+### List [GET]
 
 + Request example (application/json)
 
@@ -164,3 +196,131 @@ Get a list of cards by consumer document.
 
     + Attributes (object)
         + Card (ViewCardData)
+
+# Group Helpers
+Requests to return additional data used in others requests using his identifiers.
+
+## Currencies [/currencies]
+
+### Currencies [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Currencies (CurrencyList)
+
+## Brands [/brands]
+
+### Brands [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Brands (BrandList)
+
+## Brand by number [/brands/{number}]
+
++ Parameters
+    + number - First digits of the card number
+
+
+### Brand by number [GET]
+
+::: warning
+#### <i class="fa fa-warning"></i> Caution
+Do not send full `number`, with the all digits of the card, just the first four ones.
+:::
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Brand (BrandData)
+
+# Group Notifications
+Notifications are used to send data back to your application, when a Sale status changes.
+
+::: note
+#### <i class="fa fa-info"></i> URL
+The notification will be sent if you configure a URL, previously in this [panel](https://www.hubcash.com/panel).
+But in all the cases, the notification will be created and you can resend later.
+:::
+
+
+## Notifications [/notifications/{NotificationId}]
+
++ Parameters
+    + NotificationId - Identifier
+
+### Details [GET]
+
+::: note
+The data below is the exactly what we will send to you after notification creation.
+:::
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Notification (NotificationData)
+
+### Resend [PUT]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Success (string)
+
+
+## List of notifications [/notifications{?pg}]
+
++ Parameters
+    + pg: `1` (number, optional) - Page number
+
+### List [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Notifications (NotificationList)
+        + Pages (number)
