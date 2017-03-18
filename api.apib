@@ -90,7 +90,9 @@ If you don't have these keys yet, you can can gain access following the links:
 
 ## NotificationData (object)
 + NotificationId: 58c040b32d8baf18526217f5 (required) - Unique identifier
++ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
 + DateAdded: `Y-m-d- H:i:s` (required) -  Date added
++ LastResponseCode: 200 (number, required) -  The last http response code obtained
 + Sale (NotificationSaleData, required)
 
 ## NotificationSaleData (object)
@@ -100,6 +102,31 @@ If you don't have these keys yet, you can can gain access following the links:
 ## NotificationList (array)
 + (NotificationData) - Notifications
 
+# Group Sales
+
+## Status
+
+The table below describes the list of possible status for Sales:
+
+ID | Description
+--:| :-----------
+ 1 | Processed
+ 2 | Analyzing
+ 3 | Capturing
+ 4 | WaitingPayment (For billets)
+ 5 | Fail
+ 6 | Canceled
+ 7 | Done
+
+## Methods
+
+The table below describes the list of possible methods for Sales:
+
+ID        | Description
+:---------| :-----------
+ `Credit` | Using credit card, accept installments
+ `Debit`  | Using debit card, does not accept installments
+ `Billet` | Using billet, does not accept installments, has optional configuration in the [panel](https://www.hubcash.com/panel)
 
 # Group Cards
 Credit and debit cards can be saved to be used by the consumer recurrently transactions.
@@ -233,6 +260,7 @@ Requests to return additional data used in others requests using his identifiers
         + Brands (BrandList)
 
 ## Brand by number [/brands/{number}]
+Use this request to return the brand data from first digits of the card number.
 
 + Parameters
     + number - First digits of the card number
@@ -275,7 +303,7 @@ But in all the cases, the notification will be created and you can resend later.
 ### Details [GET]
 
 ::: note
-The data below is the exactly what we will send to you after notification creation.
+The response below is the exactly the data that we send to you after notification creation.
 :::
 
 + Request example (application/json)
@@ -302,7 +330,7 @@ The data below is the exactly what we will send to you after notification creati
 + Response 200 (application/json)
 
     + Attributes (object)
-        + Success (string)
+        + Notification (NotificationData)
 
 
 ## List of notifications [/notifications{?pg}]
