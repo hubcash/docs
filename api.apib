@@ -65,6 +65,20 @@ If you don't have these keys yet, you can can gain access following the links:
 + DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
 + DateAdded: `Y-m-d- H:i:s` (optional) -  Date added
 
+## ViewCardDataNotSaved (object)
++ Brand: Visa (required) - Card brand name
++ HolderName: Maria da Silva (required) - Holder name
++ Document: 223.112.333.112-22 (required) - Document of the holder
++ Phone: 93 912323322 (optional) - Optional phone of the holder
++ ExpMonth: 03 (required) - Card expiration month (mm)
++ ExpYear: 2022 (required) - Card expiration year (yyyy)
++ LastDigits: 1234 (optional) - Last digits of the cards
++ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
++ DateAdded: `Y-m-d- H:i:s` (optional) -  Date added
+
+## ViewCardDataSaved (object)
++ CardId: 58c040b32d8baf18526217f5 (optional) - Unique identifier
+
 ## CardList (array)
 + (ViewCardData) - Cards
 
@@ -138,7 +152,27 @@ If you don't have these keys yet, you can can gain access following the links:
 + BillingAddress (AddressData, optional)
 + ShippingAddress (AddressData, optional)
 + Items (array[ItemsData], optional)
-+ Card (ViewCardData, optional)
++ Card (ViewCardDataNotSaved, optional)
++ Billet (PostBilletData, optional)
+
+## PostSaleCardData (object)
++ Amount: 100 (required, number) - Amount in cents
++ Currency: BRL (required) - Currency identifier
++ Method: Credit (required) - Sale method identifier
++ Capture: true (optional, boolean) - If the sale will be captured after creation
++ Card (ViewCardDataNotSaved, optional)
+
+## PostSaleCardSavedData (object)
++ Amount: 100 (required, number) - Amount in cents
++ Currency: BRL (required) - Currency identifier
++ Method: Credit (required) - Sale method identifier
++ Capture: true (optional, boolean) - If the sale will be captured after creation
++ Card (ViewCardDataSaved, optional)
+
+## PostSaleBilletData (object)
++ Amount: 100 (required, number) - Amount in cents
++ Currency: BRL (required) - Currency identifier
++ Method: Billet (required) - Sale method identifier
 + Billet (PostBilletData, optional)
 
 ## SaleList (array)
@@ -182,7 +216,7 @@ If you don't have these keys yet, you can can gain access following the links:
 
 ## BilletData (object)
 + OurNumber: 22231233 (required, number) - OurNumber
-+ Instructions (array[string], optional)
++ Instructions (array[string], optional) - Instructions of the billet, max of 6
 + ExpiresIn: 7 (required, number) - Days to expire the billet, will be added to the expiration date
 + Digitable: 223123.223123222.3566313.333222123.3455123 (required) - Digitable number
 + Image: base64 (required) - Base64 containing the barcode image
@@ -269,6 +303,11 @@ ID        | Description
 
 ### Capture [PUT]
 
+::: note
+Sales can be captured after creation. The capture action effective the sale in the payment operator. Sales that does not
+have been captured will just allocated credit limits.
+:::
+
 + Request example (application/json)
 
     + Headers
@@ -304,7 +343,7 @@ ID        | Description
 
 ### Create [POST]
 
-+ Request example (application/json)
++ Request with all fields (application/json)
 
     + Headers
 
@@ -313,6 +352,36 @@ ID        | Description
 
     + Attributes (object)
         + Sale (PostSaleData)
+
++ Request with minimal new Credit Card (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Sale (PostSaleCardData)
+
++ Request with minimal saved Credit Card (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Sale (PostSaleCardSavedData)
+
++ Request with minimal Billet (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Sale (PostSaleBilletData)
 
 + Response 200 (application/json)
 

@@ -540,7 +540,8 @@ your application to take advantage of our payment, delivery and fraud control so
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"OurNumber"</span>
             </span>}</span>,
             "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Instructions of the billet, max of 6"</span>
             </span>}</span>,
             "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
@@ -576,7 +577,11 @@ your application to take advantage of our payment, delivery and fraud control so
       ]
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="sales-capture" class="resource"><h3 class="resource-heading">Capture <a href="#sales-capture" class="permalink">&nbsp;&para;</a></h3><div id="sales-capture-put" class="action put"><h4 class="action-heading"><div class="name">Capture</div><a href="#sales-capture-put" class="method put">PUT</a><code class="uri">/sales/capture/{Tid}</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales/capture/<span class="hljs-attribute" title="Tid">Tid</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>Tid</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Identifier</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="sales-capture" class="resource"><h3 class="resource-heading">Capture <a href="#sales-capture" class="permalink">&nbsp;&para;</a></h3><div id="sales-capture-put" class="action put"><h4 class="action-heading"><div class="name">Capture</div><a href="#sales-capture-put" class="method put">PUT</a><code class="uri">/sales/capture/{Tid}</code></h4><div class="note">
+<p>Sales can be captured after creation. The capture action effective the sale in the payment operator. Sales that does not
+have been captured will just allocated credit limits.</p>
+</div>
+<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales/capture/<span class="hljs-attribute" title="Tid">Tid</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>Tid</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Identifier</p>
 </dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>example</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">Tid</span>": <span class="hljs-value"><span class="hljs-string">"58c040b32d8baf18526217f5"</span></span>,
@@ -918,7 +923,8 @@ your application to take advantage of our payment, delivery and fraud control so
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"OurNumber"</span>
             </span>}</span>,
             "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Instructions of the billet, max of 6"</span>
             </span>}</span>,
             "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
@@ -1296,7 +1302,8 @@ your application to take advantage of our payment, delivery and fraud control so
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"OurNumber"</span>
             </span>}</span>,
             "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Instructions of the billet, max of 6"</span>
             </span>}</span>,
             "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
@@ -1332,7 +1339,7 @@ your application to take advantage of our payment, delivery and fraud control so
       ]
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="sales-create" class="resource"><h3 class="resource-heading">Create <a href="#sales-create" class="permalink">&nbsp;&para;</a></h3><div id="sales-create-post" class="action post"><h4 class="action-heading"><div class="name">Create</div><a href="#sales-create-post" class="method post">POST</a><code class="uri">/sales</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>example</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="sales-create" class="resource"><h3 class="resource-heading">Create <a href="#sales-create" class="permalink">&nbsp;&para;</a></h3><div id="sales-create-post" class="action post"><h4 class="action-heading"><div class="name">Create</div><a href="#sales-create-post" class="method post">POST</a><code class="uri">/sales</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>with all fields</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">Ref</span>": <span class="hljs-value"><span class="hljs-string">"123456abc"</span></span>,
     "<span class="hljs-attribute">Amount</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
@@ -1381,7 +1388,6 @@ your application to take advantage of our payment, delivery and fraud control so
       </span>}
     ]</span>,
     "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">CardId</span>": <span class="hljs-value"><span class="hljs-string">"58c040b32d8baf18526217f5"</span></span>,
       "<span class="hljs-attribute">Brand</span>": <span class="hljs-value"><span class="hljs-string">"Visa"</span></span>,
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
@@ -1556,10 +1562,6 @@ your application to take advantage of our payment, delivery and fraud control so
         "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
           "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">CardId</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
-            </span>}</span>,
             "<span class="hljs-attribute">Brand</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card brand name"</span>
@@ -1603,6 +1605,212 @@ your application to take advantage of our payment, delivery and fraud control so
             <span class="hljs-string">"ExpMonth"</span>,
             <span class="hljs-string">"ExpYear"</span>
           ]
+        </span>}</span>,
+        "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"OurNumber"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Days to expire the billet, will be added to the expiration date"</span>
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+            <span class="hljs-string">"OurNumber"</span>,
+            <span class="hljs-string">"ExpiresIn"</span>
+          ]
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Amount"</span>,
+        <span class="hljs-string">"Currency"</span>,
+        <span class="hljs-string">"Method"</span>
+      ]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>with minimal new Credit Card</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Amount</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">Currency</span>": <span class="hljs-value"><span class="hljs-string">"BRL"</span></span>,
+    "<span class="hljs-attribute">Method</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,
+    "<span class="hljs-attribute">Capture</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">Brand</span>": <span class="hljs-value"><span class="hljs-string">"Visa"</span></span>,
+      "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
+      "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
+      "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
+      "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
+      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
+      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">Amount</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Amount in cents"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Currency</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Currency identifier"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Method</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Sale method identifier"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Capture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"If the sale will be captured after creation"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">Brand</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card brand name"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Holder name"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">Document</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"22 (required) - Document of the holder"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">Phone</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Brand"</span>,
+            <span class="hljs-string">"HolderName"</span>,
+            <span class="hljs-string">"ExpMonth"</span>,
+            <span class="hljs-string">"ExpYear"</span>
+          ]
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Amount"</span>,
+        <span class="hljs-string">"Currency"</span>,
+        <span class="hljs-string">"Method"</span>
+      ]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>with minimal saved Credit Card</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Amount</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">Currency</span>": <span class="hljs-value"><span class="hljs-string">"BRL"</span></span>,
+    "<span class="hljs-attribute">Method</span>": <span class="hljs-value"><span class="hljs-string">"Credit"</span></span>,
+    "<span class="hljs-attribute">Capture</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">CardId</span>": <span class="hljs-value"><span class="hljs-string">"58c040b32d8baf18526217f5"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">Amount</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Amount in cents"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Currency</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Currency identifier"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Method</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Sale method identifier"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Capture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"If the sale will be captured after creation"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Card</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">CardId</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
+            </span>}
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Amount"</span>,
+        <span class="hljs-string">"Currency"</span>,
+        <span class="hljs-string">"Method"</span>
+      ]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>with minimal Billet</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Amount</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+    "<span class="hljs-attribute">Currency</span>": <span class="hljs-value"><span class="hljs-string">"BRL"</span></span>,
+    "<span class="hljs-attribute">Method</span>": <span class="hljs-value"><span class="hljs-string">"Billet"</span></span>,
+    "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Hello, world!"</span>
+      ]</span>,
+      "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value"><span class="hljs-number">7</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Sale</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">Amount</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Amount in cents"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Currency</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Currency identifier"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">Method</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Sale method identifier"</span>
         </span>}</span>,
         "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1973,7 +2181,8 @@ your application to take advantage of our payment, delivery and fraud control so
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"OurNumber"</span>
             </span>}</span>,
             "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Instructions of the billet, max of 6"</span>
             </span>}</span>,
             "<span class="hljs-attribute">ExpiresIn</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
