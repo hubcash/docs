@@ -59,24 +59,11 @@ If you don't have these keys yet, you can can gain access following the links:
 + HolderName: Maria da Silva (required) - Holder name
 + Document: 223.112.333.112-22 (required) - Document of the holder
 + Phone: 93 912323322 (optional) - Optional phone of the holder
++ LastDigits: 1234 (optional) - Last digits of the cards
 + ExpMonth: 03 (required) - Card expiration month (mm)
 + ExpYear: 2022 (required) - Card expiration year (yyyy)
-+ LastDigits: 1234 (optional) - Last digits of the cards
-+ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
-+ DateAdded: `Y-m-d- H:i:s` (optional) -  Date added
 
-## ViewCardDataNotSaved (object)
-+ Brand: Visa (required) - Card brand name
-+ HolderName: Maria da Silva (required) - Holder name
-+ Document: 223.112.333.112-22 (required) - Document of the holder
-+ Phone: 93 912323322 (optional) - Optional phone of the holder
-+ ExpMonth: 03 (required) - Card expiration month (mm)
-+ ExpYear: 2022 (required) - Card expiration year (yyyy)
-+ LastDigits: 1234 (optional) - Last digits of the cards
-+ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
-+ DateAdded: `Y-m-d- H:i:s` (optional) -  Date added
-
-## ViewCardDataSaved (object)
+## PostCardDataSaved (object)
 + CardId: 58c040b32d8baf18526217f5 (optional) - Unique identifier
 
 ## CardList (array)
@@ -152,7 +139,7 @@ If you don't have these keys yet, you can can gain access following the links:
 + BillingAddress (AddressData, optional)
 + ShippingAddress (AddressData, optional)
 + Items (array[ItemsData], optional)
-+ Card (ViewCardDataNotSaved, optional)
++ Card (PostCardData, optional)
 + Billet (PostBilletData, optional)
 
 ## PostSaleCardData (object)
@@ -160,14 +147,14 @@ If you don't have these keys yet, you can can gain access following the links:
 + Currency: BRL (required) - Currency identifier
 + Method: Credit (required) - Sale method identifier
 + Capture: true (optional, boolean) - If the sale will be captured after creation
-+ Card (ViewCardDataNotSaved, optional)
++ Card (PostCardData, optional)
 
 ## PostSaleCardSavedData (object)
 + Amount: 100 (required, number) - Amount in cents
 + Currency: BRL (required) - Currency identifier
 + Method: Credit (required) - Sale method identifier
 + Capture: true (optional, boolean) - If the sale will be captured after creation
-+ Card (ViewCardDataSaved, optional)
++ Card (PostCardDataSaved, optional)
 
 ## PostSaleBilletData (object)
 + Amount: 100 (required, number) - Amount in cents
@@ -215,14 +202,14 @@ If you don't have these keys yet, you can can gain access following the links:
 + ZipCode: 88202-000 (optional) - ZipCode
 
 ## BilletData (object)
-+ OurNumber: 22231233 (required, number) - OurNumber
++ OurNumber: 222312 (required, number) - OurNumber
 + Instructions (array[string], optional) - Instructions of the billet, max of 6
 + ExpiresIn: 7 (required, number) - Days to expire the billet, will be added to the expiration date
 + Digitable: 223123.223123222.3566313.333222123.3455123 (required) - Digitable number
 + Image: base64 (required) - Base64 containing the barcode image
 
 ## PostBilletData (object)
-+ OurNumber: 22231233 (required, number) - OurNumber
++ OurNumber: 222312 (required, number) - OurNumber
 + Instructions (array[string], optional)
 + ExpiresIn: 7 (required, number) - Days to expire the billet, will be added to the expiration date
 

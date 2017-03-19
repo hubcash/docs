@@ -168,14 +168,12 @@ your application to take advantage of our payment, delivery and fraud control so
         "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
         "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
         "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-        "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-        "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
         "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-        "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-        "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+        "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+        "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
       </span>}</span>,
       "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+        "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
         "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
           <span class="hljs-string">"Hello, world!"</span>
         ]</span>,
@@ -278,14 +276,12 @@ your application to take advantage of our payment, delivery and fraud control so
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
       "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}</span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -504,6 +500,10 @@ your application to take advantage of our payment, delivery and fraud control so
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
             </span>}</span>,
+            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+            </span>}</span>,
             "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -511,18 +511,6 @@ your application to take advantage of our payment, delivery and fraud control so
             "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -661,14 +649,12 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
       "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}</span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -887,6 +873,10 @@ have been captured will just allocated credit limits.</p>
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
             </span>}</span>,
+            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+            </span>}</span>,
             "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -894,18 +884,6 @@ have been captured will just allocated credit limits.</p>
             "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1040,14 +1018,12 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
       "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}</span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -1266,6 +1242,10 @@ have been captured will just allocated credit limits.</p>
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
             </span>}</span>,
+            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+            </span>}</span>,
             "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -1273,18 +1253,6 @@ have been captured will just allocated credit limits.</p>
             "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1394,12 +1362,11 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
       "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
       "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
-      "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">Number</span>": <span class="hljs-value"><span class="hljs-string">"5162321366555222331234"</span></span>,
+      "<span class="hljs-attribute">SecurityCode</span>": <span class="hljs-value"><span class="hljs-string">"233"</span>
     </span>}</span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -1586,24 +1553,22 @@ have been captured will just allocated credit limits.</p>
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">Number</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"(Requests) Card number"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">SecurityCode</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card security code"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
             <span class="hljs-string">"Brand"</span>,
             <span class="hljs-string">"HolderName"</span>,
             <span class="hljs-string">"ExpMonth"</span>,
-            <span class="hljs-string">"ExpYear"</span>
+            <span class="hljs-string">"ExpYear"</span>,
+            <span class="hljs-string">"Number"</span>,
+            <span class="hljs-string">"SecurityCode"</span>
           ]
         </span>}</span>,
         "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
@@ -1647,9 +1612,8 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
       "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
       "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
-      "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">Number</span>": <span class="hljs-value"><span class="hljs-string">"5162321366555222331234"</span></span>,
+      "<span class="hljs-attribute">SecurityCode</span>": <span class="hljs-value"><span class="hljs-string">"233"</span>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -1702,24 +1666,22 @@ have been captured will just allocated credit limits.</p>
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">Number</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"(Requests) Card number"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">SecurityCode</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card security code"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
             <span class="hljs-string">"Brand"</span>,
             <span class="hljs-string">"HolderName"</span>,
             <span class="hljs-string">"ExpMonth"</span>,
-            <span class="hljs-string">"ExpYear"</span>
+            <span class="hljs-string">"ExpYear"</span>,
+            <span class="hljs-string">"Number"</span>,
+            <span class="hljs-string">"SecurityCode"</span>
           ]
         </span>}
       </span>}</span>,
@@ -1786,7 +1748,7 @@ have been captured will just allocated credit limits.</p>
     "<span class="hljs-attribute">Currency</span>": <span class="hljs-value"><span class="hljs-string">"BRL"</span></span>,
     "<span class="hljs-attribute">Method</span>": <span class="hljs-value"><span class="hljs-string">"Billet"</span></span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -1919,14 +1881,12 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
       "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}</span>,
     "<span class="hljs-attribute">Billet</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">22231233</span></span>,
+      "<span class="hljs-attribute">OurNumber</span>": <span class="hljs-value"><span class="hljs-number">222312</span></span>,
       "<span class="hljs-attribute">Instructions</span>": <span class="hljs-value">[
         <span class="hljs-string">"Hello, world!"</span>
       ]</span>,
@@ -2145,6 +2105,10 @@ have been captured will just allocated credit limits.</p>
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
             </span>}</span>,
+            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+            </span>}</span>,
             "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -2152,18 +2116,6 @@ have been captured will just allocated credit limits.</p>
             "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -2227,11 +2179,9 @@ have been captured will just allocated credit limits.</p>
     "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
     "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
     "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
     "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-    "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-    "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -2260,6 +2210,10 @@ have been captured will just allocated credit limits.</p>
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -2267,18 +2221,6 @@ have been captured will just allocated credit limits.</p>
         "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -2346,11 +2288,9 @@ have been captured will just allocated credit limits.</p>
     "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
     "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
     "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
     "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-    "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-    "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -2379,6 +2319,10 @@ have been captured will just allocated credit limits.</p>
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -2386,18 +2330,6 @@ have been captured will just allocated credit limits.</p>
         "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -2430,11 +2362,9 @@ have been captured will just allocated credit limits.</p>
       "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
       "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
       "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
       "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-      "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-      "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+      "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+      "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}
   ]</span>,
   "<span class="hljs-attribute">Pages</span>": <span class="hljs-value"><span class="hljs-number">1</span>
@@ -2517,11 +2447,9 @@ have been captured will just allocated credit limits.</p>
     "<span class="hljs-attribute">HolderName</span>": <span class="hljs-value"><span class="hljs-string">"Maria da Silva"</span></span>,
     "<span class="hljs-attribute">Document</span>": <span class="hljs-value"><span class="hljs-string">"223.112.333.112"</span></span>,
     "<span class="hljs-attribute">Phone</span>": <span class="hljs-value"><span class="hljs-string">"93 912323322"</span></span>,
-    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
-    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span></span>,
     "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
-    "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d H:i:s"</span></span>,
-    "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value"><span class="hljs-string">"Y-m-d- H:i:s"</span>
+    "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+    "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -2550,6 +2478,10 @@ have been captured will just allocated credit limits.</p>
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Optional phone of the holder"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration month (mm)"</span>
@@ -2557,18 +2489,6 @@ have been captured will just allocated credit limits.</p>
         "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Card expiration year (yyyy)"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">LastDigits</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Last digits of the cards"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateUpdated</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date updated"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">DateAdded</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Date added"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
