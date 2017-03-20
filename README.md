@@ -1,5 +1,5 @@
 # docs
-Hubcash API documentation files.
+Hubcash's API documentation files. [See online](https://hubcash.github.io/docs)
 
 ### Instructions
 
