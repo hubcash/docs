@@ -90,8 +90,8 @@ If you don't have these keys yet, you can can gain access following the links:
 
 ## NotificationData (object)
 + NotificationId: 58c040b32d8baf18526217f5 (required) - Unique identifier
-+ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
-+ DateAdded: `Y-m-d- H:i:s` (required) -  Date added
++ DateUpdated: `Y-m-dTH:i:s GMT` (optional) -  Date updated
++ DateAdded: `Y-m-dTH:i:s GMT` (required) -  Date added
 + LastResponseCode: 200 (number, required) -  The last http response code obtained
 + Sale (NotificationSaleData, required)
 
@@ -111,11 +111,11 @@ If you don't have these keys yet, you can can gain access following the links:
 + Currency: BRL (required) - Currency identifier
 + Method: Credit (required) - Sale method identifier
 + Capture: true (optional, boolean) - If the sale will be captured after creation
-+ DateCanceled: `Y-m-d H:i:s` (optional) -  Date canceled
-+ DateCaptured: `Y-m-d H:i:s` (optional) -  Date captured
-+ DateReversed: `Y-m-d H:i:s` (optional) -  Date reversed
-+ DateUpdated: `Y-m-d H:i:s` (optional) -  Date updated
-+ DateAdded: `Y-m-d- H:i:s` (required) -  Date added
++ DateCanceled: `Y-m-dTH:i:s GMT` (optional) -  Date canceled
++ DateCaptured: `Y-m-dTH:i:s GMT` (optional) -  Date captured
++ DateReversed: `Y-m-dTH:i:s GMT` (optional) -  Date reversed
++ DateUpdated: `Y-m-dTH:i:s GMT` (optional) -  Date updated
++ DateAdded: `Y-m-dTH:i:s GMT` (required) -  Date added
 + Consumer (ConsumerData, optional)
 + BillingAddress (AddressData, optional)
 + ShippingAddress (AddressData, optional)
@@ -173,17 +173,17 @@ If you don't have these keys yet, you can can gain access following the links:
 
 ## HistoryData (object)
 + Action: Data received (optional) - Action
-+ DateAdded: `Y-m-d- H:i:s` (optional) -  DateAdded
++ DateAdded: `Y-m-dTH:i:s GMT` (optional) -  DateAdded
 
 ## RollbackData (object)
 + Reason: Consumer asked (optional) - Reason
 + Obs: Mastercard message (optional) - Obs
-+ Date: `Y-m-d- H:i:s` (optional) -  Date
++ Date: `Y-m-dTH:i:s GMT` (optional) -  Date
 
 ## ConsumerData (object)
 + Name: Maria da Silva (optional) - Consumer name
 + Email: maria@dasilva.com.net, (optional) - Consumer email
-+ Birthdate: `Y-m-d- H:i:s` (optional) -  Birthdate
++ Birthdate: `Y-m-dTH:i:s GMT` (optional) -  Birthdate
 + DocumentNumber: 223.112.333.112-22 (optional) - Document
 + DocumentType: CPF (optional) - Document type
 + Gender: Feminino (optional) - Gender, can be also M/F
