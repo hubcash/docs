@@ -517,7 +517,9 @@ Use this request to return the brand data from first digits of the card number.
 
 ::: warning
 #### <i class="fa fa-warning"></i> Caution
-Do not send full `number`, with the all digits of the card, just the first four ones.
+Do not send full `number`, with the all digits of the card, just the **first ones**. There is some cards that only works if
+you pass the **six first digits**, but others, the **four ones**. So, you can request this endpoint **multiple times until you get a valid brand**.
+If you passed more then six digits and no cards are founded, probably we are **not accepting that brand** or the card is already invalid.
 :::
 
 + Request example (application/json)
@@ -537,8 +539,8 @@ Notifications are used to send data back to your application, when a Sale status
 
 ::: note
 #### <i class="fa fa-info"></i> URL
-The notification will be sent if you configure a URL, previously in this [panel](https://www.hubcash.com/panel).
-But in all the cases, the notification will be created and you can resend later.
+The notification **will be sent if you configure a URL**, previously in this [panel](https://www.hubcash.com/panel).
+But in all the cases, the notification will be created and **you can resend later**.
 :::
 
 
