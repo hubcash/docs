@@ -96,14 +96,14 @@ If you don't have these keys yet, you can can gain access following the links:
 + Sale (NotificationSaleData, required)
 
 ## NotificationSaleData (object)
-+ Tid: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
++ SaleId: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
 + Status: 1 (number, required) - Sale status
 
 ## NotificationList (array)
 + (NotificationData) - Notifications
 
 ## ViewSaleData (object)
-+ Tid: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
++ SaleId: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
 + Ref: 123456abc (optional) - Your internal identifier, order or sale ID for your store
 + Amount: 100 (required, number) - Amount in cents
 + Quota: true (optional, boolean) - If the sale has installments/quota
@@ -264,10 +264,10 @@ ID        | Description
         + Pages (number)
 
 
-## Details [/sales/{Tid}]
+## Details [/sales/{SaleId}]
 
 + Parameters
-    + Tid - Identifier
+    + SaleId - Identifier
 
 ### Details [GET]
 
@@ -283,10 +283,10 @@ ID        | Description
     + Attributes (object)
         + Sale (ViewSaleData)
 
-## Capture [/sales/capture/{Tid}]
+## Capture [/sales/capture/{SaleId}]
 
 + Parameters
-    + Tid - Identifier
+    + SaleId - Identifier
 
 ### Capture [PUT]
 
@@ -307,10 +307,10 @@ have been captured will just allocated credit limits.
     + Attributes (object)
         + Sale (ViewSaleData)
 
-## Cancel [/sales/cancel/{Tid}]
+## Cancel [/sales/cancel/{SaleId}]
 
 + Parameters
-    + Tid - Identifier
+    + SaleId - Identifier
 
 ### Cancel [PUT]
 
