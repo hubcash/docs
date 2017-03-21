@@ -217,6 +217,104 @@ If you don't have these keys yet, you can can gain access following the links:
 + Level: 72 (optional) - Level
 + Description: Approved (optional) - Description
 
+
+# Group Cards
+Credit and debit cards can be saved to be used by the consumer recurrently transactions.
+
+## Cards [/cards/{CardId}]
+
++ Parameters
+    + CardId - Identifier
+
+### Details [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Card (ViewCardData)
+
+### Edit [PUT]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Card (PutCardData)
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Card (ViewCardData)
+
+### Delete [DELETE]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Success (string)
+
+
+## List of cards by document [/cards/document/{document}{?pg}]
+Get a list of cards by consumer document.
+
++ Parameters
+    + document - Document of the consumer
+    + pg: `1` (number, optional) - Page number
+
+### List [GET]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Cards (CardList)
+        + Pages (number)
+
+
+## Create New Card [/cards]
+
+### Create [POST]
+
++ Request example (application/json)
+
+    + Headers
+
+            X-Hubcash-Code: <code>
+            X-Hubcash-Token: <token>
+
+    + Attributes (object)
+        + Card (PostCardData)
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + Card (ViewCardData)
+
+
 # Group Sales
 
 ## Status
@@ -243,11 +341,15 @@ ID        | Description
  `Debit`  | Using debit card, does not accept installments
  `Billet` | Using billet, does not accept installments, has optional configuration in the [panel](https://www.hubcash.com/panel)
 
-## List of Sales [/sales{?pg,Ref}]
+## List of Sales [/sales{?pg,Ref,Currency,Method,Capture,Status}]
 
 + Parameters
     + pg: `1` (number, optional) - Page number
     + Ref: 123456abc (optional) - Your internal identifier, order or sale ID for your store
+    + Currency: BRL (optional) - Currency identifier
+    + Method: Credit (optional) - Sale method identifier
+    + Capture: true (optional, boolean) - If the sale will be captured after creation
+    + Status: 7 (number) -  Sale status
 
 ### List [GET]
 
@@ -380,102 +482,6 @@ Identifiers for `Currency`, `Brand` and `Method` are case sensitive.
 
     + Attributes (object)
         + Sale (ViewSaleData)
-
-# Group Cards
-Credit and debit cards can be saved to be used by the consumer recurrently transactions.
-
-## Cards [/cards/{CardId}]
-
-+ Parameters
-    + CardId - Identifier
-
-### Details [GET]
-
-+ Request example (application/json)
-
-    + Headers
-
-            X-Hubcash-Code: <code>
-            X-Hubcash-Token: <token>
-
-+ Response 200 (application/json)
-
-    + Attributes (object)
-        + Card (ViewCardData)
-
-### Edit [PUT]
-
-+ Request example (application/json)
-
-    + Headers
-
-            X-Hubcash-Code: <code>
-            X-Hubcash-Token: <token>
-
-    + Attributes (object)
-        + Card (PutCardData)
-
-+ Response 200 (application/json)
-
-    + Attributes (object)
-        + Card (ViewCardData)
-
-### Delete [DELETE]
-
-+ Request example (application/json)
-
-    + Headers
-
-            X-Hubcash-Code: <code>
-            X-Hubcash-Token: <token>
-
-+ Response 200 (application/json)
-
-    + Attributes (object)
-        + Success (string)
-
-
-## List of cards by document [/cards/document/{document}{?pg}]
-Get a list of cards by consumer document.
-
-+ Parameters
-    + document - Document of the consumer
-    + pg: `1` (number, optional) - Page number
-
-### List [GET]
-
-+ Request example (application/json)
-
-    + Headers
-
-            X-Hubcash-Code: <code>
-            X-Hubcash-Token: <token>
-
-+ Response 200 (application/json)
-
-    + Attributes (object)
-        + Cards (CardList)
-        + Pages (number)
-
-
-## Create New Card [/cards]
-
-### Create [POST]
-
-+ Request example (application/json)
-
-    + Headers
-
-            X-Hubcash-Code: <code>
-            X-Hubcash-Token: <token>
-
-    + Attributes (object)
-        + Card (PostCardData)
-
-+ Response 200 (application/json)
-
-    + Attributes (object)
-        + Card (ViewCardData)
 
 # Group Helpers
 Requests to return additional data used in others requests using his identifiers.
