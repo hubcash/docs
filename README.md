@@ -8,7 +8,7 @@ To make updates in the API documentation, you just need to edit the 'api.apib' f
 ### Build usage
 
 ```bash
-aglio --theme-template theme/templates/hubcash.jade  -i api.apib -o index.html
+aglio --theme-template theme/templates/hubcash.jade -i api.apib -o index.html
 ```
 
 Powered by [agilo](https://github.com/danielgtaylor/aglio)

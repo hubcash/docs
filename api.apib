@@ -35,6 +35,22 @@ If you don't have these keys yet, you can can gain access following the links:
 
 # Data Structures
 
+## ErrorData (object)
++ Type: Error (required) - Possible types: Error, NotFound, Warning, Authorization
++ Field: Name (required) - Field name
++ Description: Required (required) - Description
+
+## ErrorList (array)
++ (ErrorData) - Errors
+
+## ErrorDataUnauthorized (object)
++ Type: Authorization (required) - Error type
++ Field: headers (required) - Field name
++ Description: `Authorization with the API failed` (required) - Description
+
+## ErrorListUnauthorized (array)
++ (ErrorDataUnauthorized) - Errors
+
 ## PostCardData (object)
 + Brand: Visa (required) - Card brand name
 + HolderName: Maria da Silva (required) - Holder name
@@ -240,6 +256,11 @@ Credit and debit cards can be saved to be used by the consumer recurrently trans
     + Attributes (object)
         + Card (ViewCardData)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 ### Edit [PUT]
 
 + Request example (application/json)
@@ -257,6 +278,16 @@ Credit and debit cards can be saved to be used by the consumer recurrently trans
     + Attributes (object)
         + Card (ViewCardData)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 ### Delete [DELETE]
 
 + Request example (application/json)
@@ -271,6 +302,15 @@ Credit and debit cards can be saved to be used by the consumer recurrently trans
     + Attributes (object)
         + Success (string)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## List of cards by document [/cards/document/{document}{?pg}]
 Get a list of cards by consumer document.
@@ -294,6 +334,10 @@ Get a list of cards by consumer document.
         + Cards (CardList)
         + Pages (number)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## Create New Card [/cards]
 
@@ -314,6 +358,15 @@ Get a list of cards by consumer document.
     + Attributes (object)
         + Card (ViewCardData)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 # Group Sales
 
@@ -366,6 +419,10 @@ ID        | Description
         + Sales (SaleList)
         + Pages (number)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## Details [/sales/{SaleId}]
 
@@ -385,6 +442,11 @@ ID        | Description
 
     + Attributes (object)
         + Sale (ViewSaleData)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## Capture [/sales/capture/{SaleId}]
 
@@ -410,6 +472,16 @@ have been captured will just allocated credit limits.
     + Attributes (object)
         + Sale (ViewSaleData)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 ## Cancel [/sales/cancel/{SaleId}]
 
 + Parameters
@@ -428,6 +500,16 @@ have been captured will just allocated credit limits.
 
     + Attributes (object)
         + Sale (ViewSaleData)
+
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## Create [/sales]
 
@@ -483,6 +565,16 @@ Identifiers for `Currency`, `Brand` and `Method` are case sensitive.
     + Attributes (object)
         + Sale (ViewSaleData)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 # Group Helpers
 Requests to return additional data used in others requests using his identifiers.
 
@@ -502,6 +594,11 @@ Requests to return additional data used in others requests using his identifiers
     + Attributes (object)
         + Currencies (CurrencyList)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 ## Brands [/brands]
 
 ### Brands [GET]
@@ -517,6 +614,11 @@ Requests to return additional data used in others requests using his identifiers
 
     + Attributes (object)
         + Brands (BrandList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## Brand by number [/brands/{number}]
 Use this request to return the brand data from first digits of the card number.
@@ -545,6 +647,11 @@ If you passed more then six digits and no cards are founded, probably we are **n
 
     + Attributes (object)
         + Brand (BrandData)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 # Group Notifications
 Notifications are used to send data back to your application, when a Sale status changes.
@@ -579,6 +686,11 @@ The response below is also the data structure that we send to you after notifica
     + Attributes (object)
         + Notification (NotificationData)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
+
 ### Resend [PUT]
 
 + Request example (application/json)
@@ -593,6 +705,15 @@ The response below is also the data structure that we send to you after notifica
     + Attributes (object)
         + Notification (NotificationData)
 
++ Response 400 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorList)
+
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
 
 ## List of notifications [/notifications{?pg}]
 
@@ -614,3 +735,7 @@ The response below is also the data structure that we send to you after notifica
         + Notifications (NotificationList)
         + Pages (number)
 
++ Response 401 (application/json)
+
+    + Attributes (object)
+        + Errors (ErrorListUnauthorized)
