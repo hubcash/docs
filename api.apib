@@ -121,6 +121,7 @@ If you don't have these keys yet, you can can gain access following the links:
 ## ViewSaleData (object)
 + SaleId: 58c040b32d8baf18526217f5 (required) - Sale unique identifier
 + Ref: 123456abc (optional) - Your internal identifier, order or sale ID for your store
++ SoftDescriptor: MyCompany (optional) - The descriptor with appears in the consumer credit card bill. Default is your company name.
 + Amount: 100 (required, number) - Amount in cents
 + Quota: true (optional, boolean) - If the sale has installments/quota
 + QuotaQty: 12 (optional, number) - Number of installments, if sale has quota
@@ -145,6 +146,7 @@ If you don't have these keys yet, you can can gain access following the links:
 
 ## PostSaleData (object)
 + Ref: 123456abc (optional) - Your internal identifier, order or sale ID for your store
++ SoftDescriptor: MyCompany (optional) - The descriptor with appears in the consumer credit card bill. Default is your company name.
 + Amount: 100 (required, number) - Amount in cents
 + Quota: true (optional, boolean) - If the sale has installments/quota
 + QuotaQty: 12 (optional, number) - Number of installments, if sale has quota
@@ -162,6 +164,7 @@ If you don't have these keys yet, you can can gain access following the links:
 + Amount: 100 (required, number) - Amount in cents
 + Currency: BRL (required) - Currency identifier
 + Method: Credit (required) - Sale method identifier
++ SoftDescriptor: MyCompany (optional) - The descriptor with appears in the consumer credit card bill. Default is your company name.
 + Capture: true (optional, boolean) - If the sale will be captured after creation
 + Card (PostCardData, optional)
 
@@ -169,6 +172,7 @@ If you don't have these keys yet, you can can gain access following the links:
 + Amount: 100 (required, number) - Amount in cents
 + Currency: BRL (required) - Currency identifier
 + Method: Credit (required) - Sale method identifier
++ SoftDescriptor: MyCompany (optional) - The descriptor with appears in the consumer credit card bill. Default is your company name.
 + Capture: true (optional, boolean) - If the sale will be captured after creation
 + Card (PostCardDataSaved, optional)
 
