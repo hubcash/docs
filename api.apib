@@ -316,12 +316,13 @@ Credit and debit cards can be saved to be used by the consumer recurrently trans
     + Attributes (object)
         + Errors (ErrorListUnauthorized)
 
-## List of cards by document [/cards/document/{document}{?pg}]
+## List of cards by document [/cards/document/{document}{?offset,rows}]
 Get a list of cards by consumer document.
 
 + Parameters
     + document - Document of the consumer
-    + pg: `1` (number, optional) - Page number
+    + offset: `0` (number, optional) - Offset of rows
+    + rows: `10` (number, optional) - Number of rows
 
 ### List [GET]
 
@@ -336,7 +337,6 @@ Get a list of cards by consumer document.
 
     + Attributes (object)
         + Cards (CardList)
-        + Pages (number)
 
 + Response 401 (application/json)
 
@@ -398,10 +398,11 @@ ID        | Description
  `Debit`  | Using debit card, does not accept installments
  `Billet` | Using billet, does not accept installments, has optional configuration in the [panel](https://www.hubcash.com/panel)
 
-## List of Sales [/sales{?pg,Ref,Currency,Method,Capture,Status}]
+## List of Sales [/sales{?offset,rows,Ref,Currency,Method,Capture,Status}]
 
 + Parameters
-    + pg: `1` (number, optional) - Page number
+    + offset: `0` (number, optional) - Offset of rows
+    + rows: `10` (number, optional) - Number of rows
     + Ref: 123456abc (optional) - Your internal identifier, order or sale ID for your store
     + Currency: BRL (optional) - Currency identifier
     + Method: Credit (optional) - Sale method identifier
@@ -421,7 +422,6 @@ ID        | Description
 
     + Attributes (object)
         + Sales (SaleList)
-        + Pages (number)
 
 + Response 401 (application/json)
 
@@ -719,10 +719,11 @@ The response below is also the data structure that we send to you after notifica
     + Attributes (object)
         + Errors (ErrorListUnauthorized)
 
-## List of notifications [/notifications{?pg}]
+## List of notifications [/notifications{?offset,rows}]
 
 + Parameters
-    + pg: `1` (number, optional) - Page number
+    + offset: `0` (number, optional) - Offset of rows
+    + rows: `10` (number, optional) - Number of rows
 
 ### List [GET]
 
@@ -737,7 +738,6 @@ The response below is also the data structure that we send to you after notifica
 
     + Attributes (object)
         + Notifications (NotificationList)
-        + Pages (number)
 
 + Response 401 (application/json)
 

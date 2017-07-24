@@ -285,8 +285,9 @@ your application to take advantage of our payment, delivery and fraud control so
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="cards-list-of-cards-by-document" class="resource"><h3 class="resource-heading">List of cards by document <a href="#cards-list-of-cards-by-document" class="permalink">&nbsp;&para;</a></h3><p>Get a list of cards by consumer document.</p>
-<div id="cards-list-of-cards-by-document-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#cards-list-of-cards-by-document-get" class="method get">GET</a><code class="uri">/cards/document/{document}{?pg}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/cards/document/<span class="hljs-attribute" title="document">document</span>?<span class="hljs-attribute">pg=</span><span class="hljs-literal">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>document</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Document of the consumer</p>
-</dd><dt>pg</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Page number</p>
+<div id="cards-list-of-cards-by-document-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#cards-list-of-cards-by-document-get" class="method get">GET</a><code class="uri">/cards/document/{document}{?offset,rows}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/cards/document/<span class="hljs-attribute" title="document">document</span>?<span class="hljs-attribute">offset=</span><span class="hljs-literal">0</span>&<span class="hljs-attribute">rows=</span><span class="hljs-literal">10</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>document</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Document of the consumer</p>
+</dd><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0</span></span><p>Offset of rows</p>
+</dd><dt>rows</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10</span></span><p>Number of rows</p>
 </dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>example</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">Cards</span>": <span class="hljs-value">[
     {
@@ -299,17 +300,13 @@ your application to take advantage of our payment, delivery and fraud control so
       "<span class="hljs-attribute">ExpMonth</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
       "<span class="hljs-attribute">ExpYear</span>": <span class="hljs-value"><span class="hljs-string">"2022"</span>
     </span>}
-  ]</span>,
-  "<span class="hljs-attribute">Pages</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
   "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">Cards</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">Pages</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -552,7 +549,8 @@ your application to take advantage of our payment, delivery and fraud control so
 </tr>
 </tbody>
 </table>
-<div id="sales-list-of-sales" class="resource"><h3 class="resource-heading">List of Sales <a href="#sales-list-of-sales" class="permalink">&nbsp;&para;</a></h3><div id="sales-list-of-sales-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#sales-list-of-sales-get" class="method get">GET</a><code class="uri">/sales{?pg,Ref,Currency,Method,Capture,Status}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales?<span class="hljs-attribute">pg=</span><span class="hljs-literal">1</span>&<span class="hljs-attribute">Ref=</span><span class="hljs-literal">123456abc</span>&<span class="hljs-attribute">Currency=</span><span class="hljs-literal">BRL</span>&<span class="hljs-attribute">Method=</span><span class="hljs-literal">Credit</span>&<span class="hljs-attribute">Capture=</span><span class="hljs-literal">true</span>&<span class="hljs-attribute">Status=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>pg</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Page number</p>
+<div id="sales-list-of-sales" class="resource"><h3 class="resource-heading">List of Sales <a href="#sales-list-of-sales" class="permalink">&nbsp;&para;</a></h3><div id="sales-list-of-sales-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#sales-list-of-sales-get" class="method get">GET</a><code class="uri">/sales{?offset,rows,Ref,Currency,Method,Capture,Status}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/sales?<span class="hljs-attribute">offset=</span><span class="hljs-literal">0</span>&<span class="hljs-attribute">rows=</span><span class="hljs-literal">10</span>&<span class="hljs-attribute">Ref=</span><span class="hljs-literal">123456abc</span>&<span class="hljs-attribute">Currency=</span><span class="hljs-literal">BRL</span>&<span class="hljs-attribute">Method=</span><span class="hljs-literal">Credit</span>&<span class="hljs-attribute">Capture=</span><span class="hljs-literal">true</span>&<span class="hljs-attribute">Status=</span><span class="hljs-literal">7</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0</span></span><p>Offset of rows</p>
+</dd><dt>rows</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10</span></span><p>Number of rows</p>
 </dd><dt>Ref</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>123456abc</span></span><p>Your internal identifier, order or sale ID for your store</p>
 </dd><dt>Currency</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>BRL</span></span><p>Currency identifier</p>
 </dd><dt>Method</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>Credit</span></span><p>Sale method identifier</p>
@@ -654,17 +652,13 @@ your application to take advantage of our payment, delivery and fraud control so
       </span>}</span>,
       "<span class="hljs-attribute">Status</span>": <span class="hljs-value"><span class="hljs-number">7</span>
     </span>}
-  ]</span>,
-  "<span class="hljs-attribute">Pages</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
   "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">Sales</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">Pages</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -3117,7 +3111,8 @@ But in all the cases, the notification will be created and <strong>you can resen
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="notifications-list-of-notifications" class="resource"><h3 class="resource-heading">List of notifications <a href="#notifications-list-of-notifications" class="permalink">&nbsp;&para;</a></h3><div id="notifications-list-of-notifications-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#notifications-list-of-notifications-get" class="method get">GET</a><code class="uri">/notifications{?pg}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/notifications?<span class="hljs-attribute">pg=</span><span class="hljs-literal">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>pg</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Page number</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="notifications-list-of-notifications" class="resource"><h3 class="resource-heading">List of notifications <a href="#notifications-list-of-notifications" class="permalink">&nbsp;&para;</a></h3><div id="notifications-list-of-notifications-get" class="action get"><h4 class="action-heading"><div class="name">List</div><a href="#notifications-list-of-notifications-get" class="method get">GET</a><code class="uri">/notifications{?offset,rows}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.hubcash.com/v1</span>/notifications?<span class="hljs-attribute">offset=</span><span class="hljs-literal">0</span>&<span class="hljs-attribute">rows=</span><span class="hljs-literal">10</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0</span></span><p>Offset of rows</p>
+</dd><dt>rows</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10</span></span><p>Number of rows</p>
 </dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>example</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Hubcash-Code</span>: <span class="hljs-string">&lt;code&gt;</span><br><span class="hljs-attribute">X-Hubcash-Token</span>: <span class="hljs-string">&lt;token&gt;</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">Notifications</span>": <span class="hljs-value">[
     {
@@ -3130,17 +3125,13 @@ But in all the cases, the notification will be created and <strong>you can resen
         "<span class="hljs-attribute">Status</span>": <span class="hljs-value"><span class="hljs-number">1</span>
       </span>}
     </span>}
-  ]</span>,
-  "<span class="hljs-attribute">Pages</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
   "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">Notifications</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">Pages</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -3159,7 +3150,7 @@ But in all the cases, the notification will be created and <strong>you can resen
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" target="_blank" class="aglio">aglio</a>&nbsp;on 27 Jun 2017</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" target="_blank" class="aglio">aglio</a>&nbsp;on 24 Jul 2017</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
